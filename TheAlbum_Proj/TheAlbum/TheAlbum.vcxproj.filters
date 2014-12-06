@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="Matrix23.cpp" />
+    <ClCompile Include="Pad.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Sequence\SeqParent.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\StageSelect.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Title.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Parent.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Clear.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Load.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Pause.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Play.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Ending.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContent\DynamicObject.cpp">
+      <Filter>GameContent</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContent\StaticObject.cpp">
+      <Filter>GameContent</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContent\State.cpp">
+      <Filter>GameContent</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Array2D.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="Matrix23.h" />
+    <ClInclude Include="Pad.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Sequence\SeqChild.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\StageSelect.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Title.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\SeqParent.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Child.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Parent.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Clear.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Pause.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Play.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Load.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Ending.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContent\DynamicObject.h">
+      <Filter>GameContent</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContent\StaticObject.h">
+      <Filter>GameContent</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContent\State.h">
+      <Filter>GameContent</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sequence">
+      <UniqueIdentifier>{850ce4f3-a2d3-49ef-a679-8b67b0f7a8eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sequence\Game">
+      <UniqueIdentifier>{c56f925a-f305-4eb4-80f2-03b35cf264b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContent">
+      <UniqueIdentifier>{015c060c-21ea-4f79-a5ca-0f0021677698}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
