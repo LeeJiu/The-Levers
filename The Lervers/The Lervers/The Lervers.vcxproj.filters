@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sequence">
+      <UniqueIdentifier>{c826062f-0619-458d-91d6-66ea8a2b6b68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sequence\Game">
+      <UniqueIdentifier>{20c49700-921b-4659-af19-00d9a418544c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContents">
+      <UniqueIdentifier>{1b5627e8-5468-4462-8474-4d95999b94d3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="Matrix23.cpp" />
+    <ClCompile Include="Pad.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Sequence\Ending.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\GameOver.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Parent.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Title.cpp">
+      <Filter>Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Clear.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Parent.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Pause.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Play.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Ready.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContents\DynamicObject.cpp">
+      <Filter>GameContents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContents\State.cpp">
+      <Filter>GameContents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContents\StaticObject.cpp">
+      <Filter>GameContents</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Failure.cpp">
+      <Filter>Sequence\Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Array2D.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="Matrix23.h" />
+    <ClInclude Include="Pad.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Sequence\Child.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Ending.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\GameOver.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Parent.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Title.h">
+      <Filter>Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Child.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Clear.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Parent.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Pause.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Play.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Ready.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContents\DynamicObject.h">
+      <Filter>GameContents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContents\State.h">
+      <Filter>GameContents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContents\StaticObject.h">
+      <Filter>GameContents</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Failure.h">
+      <Filter>Sequence\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
