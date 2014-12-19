@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Game\DynamicObject.cpp" />
+    <ClCompile Include="Game\State.cpp" />
+    <ClCompile Include="Game\StaticObject.cpp" />
+    <ClCompile Include="Sequence\Parent.cpp" />
+    <ClCompile Include="Sequence\Game\Parent.cpp" />
+    <ClCompile Include="Sequence\Game\Play.cpp" />
+    <ClCompile Include="Matrix23.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="Sequence\Title.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Clear.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Ending.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\GameOver.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Ready.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence\Game\Pause.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+    <ClCompile Include="Pad.cpp">
+      <Filter>본것</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game\DynamicObject.h" />
+    <ClInclude Include="Game\State.h" />
+    <ClInclude Include="Game\StaticObject.h" />
+    <ClInclude Include="Sequence\Parent.h" />
+    <ClInclude Include="Sequence\Game\Parent.h" />
+    <ClInclude Include="Sequence\Game\Play.h" />
+    <ClInclude Include="Matrix23.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="Array2D.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Title.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Child.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Child.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Clear.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Ending.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\GameOver.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Ready.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence\Game\Pause.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+    <ClInclude Include="Pad.h">
+      <Filter>본것</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="본것">
+      <UniqueIdentifier>{39c05a60-dafa-499e-aa1c-ac63f1cbdefb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
