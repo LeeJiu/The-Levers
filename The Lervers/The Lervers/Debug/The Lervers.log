@@ -1,9 +1,133 @@
-﻿빌드 시작: 2014-12-20 오전 2:06:12
-     1>2 노드의 "D:\The_Lervers_proj\The Lervers\The Lervers.vcxproj" 프로젝트(clean 대상)입니다.
-     1>_PrepareForClean:
-         "Debug\The Lervers.lastbuildstate" 파일을 삭제하고 있습니다.
-     1>"D:\The_Lervers_proj\The Lervers\The Lervers.vcxproj" 프로젝트를 빌드했습니다(clean 대상).
+﻿빌드 시작: 2015-01-06 오후 11:25:36
+     1>2 노드의 "D:\The-Levers\The Lervers\The Lervers\The Lervers.vcxproj" 프로젝트(build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\The Lervers.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\GameLib\3DGraphics1\include /I"D:\The-Levers\The Lervers\The Lervers\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt File.cpp Image.cpp main.cpp Matrix23.cpp Pad.cpp SoundManager.cpp Vector2.cpp
+         Vector2.cpp
+         SoundManager.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\wave.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\player.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\wave.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\player.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Pad.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\input\keyboard.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\input\joystick.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Matrix23.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         main.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\framework.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Image.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\framework.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         File.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         코드를 생성하고 있습니다...
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\GameLib\3DGraphics1\include /I"D:\The-Levers\The Lervers\The Lervers\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\GameContents\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GameContents\DynamicObject.cpp GameContents\State.cpp GameContents\StaticObject.cpp
+         StaticObject.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         State.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\framework.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\wave.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\player.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         DynamicObject.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\framework.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         코드를 생성하고 있습니다...
+     1>d:\the-levers\the lervers\the lervers\gamecontents\state.cpp(363): warning C4715: 'State::hasCleared' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\GameLib\3DGraphics1\include /I"D:\The-Levers\The Lervers\The Lervers\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\Sequence\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Sequence\Ending.cpp Sequence\GameOver.cpp Sequence\Parent.cpp Sequence\Title.cpp
+         Title.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\wave.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\player.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Parent.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\wave.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\player.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         GameOver.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Ending.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         코드를 생성하고 있습니다...
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\GameLib\3DGraphics1\include /I"D:\The-Levers\The Lervers\The Lervers\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\Sequence\Game\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Sequence\Game\Clear.cpp Sequence\Game\Failure.cpp Sequence\Game\Parent.cpp Sequence\Game\Pause.cpp Sequence\Game\Play.cpp Sequence\Game\Ready.cpp
+         Ready.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Play.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\input\keyboard.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\wave.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\player.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Pause.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\wave.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>d:\gamelib\3dgraphics1\include\gamelib\sound\player.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Parent.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Failure.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         Clear.cpp
+     1>d:\gamelib\3dgraphics1\include\gamelib\gamelib.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         코드를 생성하고 있습니다...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\The Lervers.exe.embed.manifest.res" "Debug\The Lervers_manifest.rc" 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\The-Levers\The Lervers\Debug\The Lervers.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\GameLib\3DGraphics1\lib GameLib_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\The Lervers.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\The-Levers\The Lervers\Debug\The Lervers.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\The-Levers\The Lervers\Debug\The Lervers.lib" /MACHINE:X86 "Debug\The Lervers.exe.embed.manifest.res"
+         Debug\File.obj
+         Debug\Image.obj
+         Debug\main.obj
+         Debug\Matrix23.obj
+         Debug\Pad.obj
+         Debug\SoundManager.obj
+         Debug\Vector2.obj
+         Debug\GameContents\DynamicObject.obj
+         Debug\GameContents\State.obj
+         Debug\GameContents\StaticObject.obj
+         Debug\Sequence\Ending.obj
+         Debug\Sequence\GameOver.obj
+         Debug\Sequence\Parent.obj
+         Debug\Sequence\Title.obj
+         Debug\Sequence\Game\Clear.obj
+         Debug\Sequence\Game\Failure.obj
+         Debug\Sequence\Game\Parent.obj
+         Debug\Sequence\Game\Pause.obj
+         Debug\Sequence\Game\Play.obj
+         Debug\Sequence\Game\Ready.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\The Lervers.exe.embed.manifest" /manifest "Debug\The Lervers.exe.intermediate.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\The Lervers.exe.embed.manifest.res" "Debug\The Lervers_manifest.rc" 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\The-Levers\The Lervers\Debug\The Lervers.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\GameLib\3DGraphics1\lib GameLib_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\The Lervers.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\The-Levers\The Lervers\Debug\The Lervers.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\The-Levers\The Lervers\Debug\The Lervers.lib" /MACHINE:X86 "Debug\The Lervers.exe.embed.manifest.res"
+         Debug\File.obj
+         Debug\Image.obj
+         Debug\main.obj
+         Debug\Matrix23.obj
+         Debug\Pad.obj
+         Debug\SoundManager.obj
+         Debug\Vector2.obj
+         Debug\GameContents\DynamicObject.obj
+         Debug\GameContents\State.obj
+         Debug\GameContents\StaticObject.obj
+         Debug\Sequence\Ending.obj
+         Debug\Sequence\GameOver.obj
+         Debug\Sequence\Parent.obj
+         Debug\Sequence\Title.obj
+         Debug\Sequence\Game\Clear.obj
+         Debug\Sequence\Game\Failure.obj
+         Debug\Sequence\Game\Parent.obj
+         Debug\Sequence\Game\Pause.obj
+         Debug\Sequence\Game\Play.obj
+         Debug\Sequence\Game\Ready.obj
+         The Lervers.vcxproj -> D:\The-Levers\The Lervers\Debug\The Lervers.exe
+       FinalizeBuildStatus:
+         "Debug\The Lervers.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Debug\The Lervers.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"D:\The-Levers\The Lervers\The Lervers\The Lervers.vcxproj" 프로젝트를 빌드했습니다(build 대상).
 
 빌드했습니다.
 
-경과 시간: 00:00:00.01
+경과 시간: 00:00:10.17

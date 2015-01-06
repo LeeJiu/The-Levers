@@ -18,20 +18,21 @@ public:
 	};
 	struct Lights{
 		enum Flag2{
-			FLAG_LIGHT1 = ( 1 << 0 ), //ºû1
-			FLAG_LIGHT2 = ( 1 << 1 ), //ºû2
-			FLAG_LIGHT3 = ( 1 << 2 ), //ºû3
-			FLAG_LIGHT4 = ( 1 << 3 ), //ºû4
-			FLAG_LIGHT5 = ( 1 << 4 ), //ºû5
+			FLAG_LIGHT1 = ( 1 << 5 ), //ºû1
+			FLAG_LIGHT2 = ( 1 << 6 ), //ºû2 
+			FLAG_LIGHT3 = ( 1 << 7 ), //ºû3
+			FLAG_LIGHT4 = ( 1 << 8 ), //ºû4
+			FLAG_LIGHT5 = ( 1 << 9 ), //ºû5
 		};
 	};
 	struct Levers{
 		enum Flag3{
-			FLAG_LEVER1 = ( 1 << 0 ), //·¹¹ö1
-			FLAG_LEVER2 = ( 1 << 1 ), //·¹¹ö2
-			FLAG_LEVER3 = ( 1 << 2 ), //·¹¹ö3
-			FLAG_LEVER4 = ( 1 << 3 ), //·¹¹ö4
-			FLAG_LEVER5 = ( 1 << 4 ), //·¹¹ö5
+			FLAG_LEVER1 = ( 1 << 10 ), //·¹¹ö1
+			FLAG_LEVER2 = ( 1 << 11 ), //·¹¹ö2
+			FLAG_LEVER3 = ( 1 << 12 ), //·¹¹ö3
+			FLAG_LEVER4 = ( 1 << 13 ), //·¹¹ö4
+			FLAG_LEVER5 = ( 1 << 14 ), //·¹¹ö5
+			FLAG_NONELEVERS = ( 1 << 15 ), //ºó ¿ëµµ.
 		};
 	};
 	StaticObject();

@@ -222,11 +222,10 @@ bool DynamicObject::isIntersect( const DynamicObject& o ) const {
 }
 
 bool DynamicObject::hasLeverButtonPressed() const {
-   if ( mType == TYPE_PLAYER ){
+   if ( mType == TYPE_PLAYER )
       return Pad::isOn( Pad::A );
-   }else{
+   else
       return false;
-   }
 }
 
 void DynamicObject::getCell( int* x, int* y ) const {

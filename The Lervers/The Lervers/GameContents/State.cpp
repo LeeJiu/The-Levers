@@ -46,37 +46,62 @@ mImage( 0 ),
 		unsigned* FloorList = new unsigned[ n ];
 		int FloorNum = 0; //0으로 초기화
 
-		for ( int y = 0; y < HEIGHT; ++y ){
-			for ( int x = 0; x < WIDTH; ++x ){
+		for ( int y = 0; y < HEIGHT; ++y )
+		{
+			for ( int x = 0; x < WIDTH; ++x )
+			{
 				StaticObject& o = mStaticObjects( x, y );
-				if( ( x == 0 ) || ( x == WIDTH-1 ) ){ //세로 벽 그리기
+				if( ( x == 0 ) || ( x == WIDTH-1 ) )
+				{ //세로 벽 그리기
 					o.setFlag( StaticObject::Normal::FLAG_WALL_H );
-				}else if (( x>0 || x < WIDTH-1 )&&( y < 4) ){
-					if( y == 1 && x == 5 ){      //가로 벽 사이에 라이트 그리기
+				}
+				else if (( x>0 || x < WIDTH-1 )&&( y < 4) )
+				{
+					if( y == 1 && x == 5 )
+					{      //가로 벽 사이에 라이트 그리기
 						o.setFlag( StaticObject::Lights::FLAG_LIGHT1 );
-					}else if( y == 1 && x == 7 ){
+					}
+					else if( y == 1 && x == 7 )
+					{
 						o.setFlag( StaticObject::Lights::FLAG_LIGHT2 );
-					}else if( y == 1 && x == 9 ){
+					}
+					else if( y == 1 && x == 9 )
+					{
 						o.setFlag( StaticObject::Lights::FLAG_LIGHT3 );
-					}else if( y == 1 && x == 11 ){
+					}
+					else if( y == 1 && x == 11 )
+					{
 						o.setFlag( StaticObject::Lights::FLAG_LIGHT4 );
-					}else if( y == 1 && x == 13 ){
+					}
+					else if( y == 1 && x == 13 )
+					{
 						o.setFlag( StaticObject::Lights::FLAG_LIGHT5 );
-					}else if( y == 3 && x == 9 ){      //문 그리기
+					}
+					else if( y == 3 && x == 9 )
+					{      //문 그리기
 						o.setFlag( StaticObject::Normal::FLAG_DOOR );
-					}else{      //가로 벽 그리기
+					}
+					else
+					{      //가로 벽 그리기
 						o.setFlag( StaticObject::Normal::FLAG_WALL_W );
 					}   
-				}else if ( ( x>0 || x < WIDTH-1 ) && ( y == HEIGHT-1 ) ){
+				}
+				else if ( ( x>0 || x < WIDTH-1 ) && ( y == HEIGHT-1 ) )
+				{
 					//맨 밑에 바닥을 비워둠 / 플레이어가 존재할 위치
 					o.setFlag( StaticObject::Normal::FLAG_FLOOR );
-				}else{
-					if ( f.getRandom( 100 ) < stageData.mFloorRate ){
+				}
+				else
+				{
+					if ( f.getRandom( 100 ) < stageData.mFloorRate )
+					{
 						o.setFlag( StaticObject::Normal::FLAG_FLOOR );
 						//바닥의 정보를 배열에 저장 / 레버가 놓여야 하기 때문에
 						FloorList[ FloorNum ] = ( x << 16 ) + y;
 						++FloorNum;
-					}else{ //벽도, 바닥도 아닌 것은 모두 구멍.
+					}
+					else
+					{ //벽도, 바닥도 아닌 것은 모두 구멍.
 						o.setFlag( StaticObject::Normal::FLAG_HOLE );
 					}
 				}
@@ -147,9 +172,38 @@ void State::draw() const {
 	}
 }
 
-void State::update(){   
+void SetOn_OffFlag( StaticObject& light, StaticObject::Lights::Flag2 flag )
+{
+	bool IsLight = light.checkFlag( flag );
+
+	//라이트 off 상태면
+	if( !IsLight )
+		light.resetFlag( flag );   //라이트 on
+	//라이트 on 상태면
+	else
+		light.setFlag( flag );   //라이트 off
+}
+
+void SetOff_OnFlag( StaticObject& light, StaticObject::Lights::Flag2 flag )
+{
+	//라이트 1 플래그 변화
+	bool IsLight = light.checkFlag( flag );
+
+	//라이트 off 상태면
+	if( IsLight )
+		light.resetFlag( flag );   //라이트 on
+	//라이트 on 상태면
+	else
+		light.setFlag( flag );   //라이트 off
+}
+
+
+
+void State::update()
+{   
 	//동적 오브젝트
-	for ( int i = 0; i < mDynamicObjectNumber; ++i ){
+	for ( int i = 0; i < mDynamicObjectNumber; ++i )
+	{
 		DynamicObject& o = mDynamicObjects[ i ];
 
 		//위치
@@ -160,151 +214,118 @@ void State::update(){
 		int WallY[ 9 ];
 		int WallNum = 0;
 
-		if( o.isPlayer() ){   //플레이어일때
+		if( o.isPlayer() )
+		{   
+			//플레이어일때
 			StaticObject& so = mStaticObjects( x, y );
-			if( so.checkFlag( StaticObject::Normal::FLAG_HOLE ) ){   //구멍일 때
+
+			StaticObject& light1 = mStaticObjects( 5, 1 );
+			StaticObject& light2 = mStaticObjects( 7, 1 );
+			StaticObject& light3 = mStaticObjects( 9, 1 );
+			StaticObject& light4 = mStaticObjects( 11, 1 );
+			StaticObject& light5 = mStaticObjects( 13, 1 );
+	
+			if( so.checkFlag( StaticObject::Normal::FLAG_HOLE ) )
+			{   
+				//구멍일 때
 				o.die();   //구멍이면 추락사
-			}else{      //구멍이 아닐 때
-				if ( o.hasLeverButtonPressed() ){ //레버를 당겼을때
-					if ( !so.checkFlag( StaticObject::Levers::FLAG_LEVER1 ) ){   //레버1 on
-						//라이트 1, 3 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT1 ) ){   //라이트 off 상태면
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT1 );   //라이트 on
-						}else{   //라이트 on 상태면
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT1 );   //라이트 off
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT3 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}
-					}else if ( so.checkFlag( StaticObject::Levers::FLAG_LEVER1 ) ){   //레버1 off
-						//라이트 1, 3 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT1 ) ){   //라이트 off 상태면
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT1 );   //라이트 on
-						}else{   //라이트 on 상태면
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT1 );   //라이트 off
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT3 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}
-					}else if ( !so.checkFlag( StaticObject::Levers::FLAG_LEVER2 ) ){   //레버2 on
-						//라이트 2, 3, 5 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT2 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT3 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT5 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}
-					}else if ( so.checkFlag( StaticObject::Levers::FLAG_LEVER2 ) ){   //레버2 off
-						//라이트 2, 3, 5 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT2 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT3 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT5 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}
-					}else if ( !so.checkFlag( StaticObject::Levers::FLAG_LEVER3 ) ){   //레버3 on
-						//라이트 2, 4 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT2 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT4 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT4 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT4 );
-						}
-					}else if ( so.checkFlag( StaticObject::Levers::FLAG_LEVER3 ) ){   //레버3 off
-						//라이트 2, 4 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT2 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT4 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT4 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT4 );
-						}
-					}else if ( !so.checkFlag( StaticObject::Levers::FLAG_LEVER4 ) ){   //레버4 on
-						//라이트 3, 5 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT3 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT5 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}
-					}else if ( !so.checkFlag( StaticObject::Levers::FLAG_LEVER4 ) ){   //레버4 off
-						//라이트 3, 5 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT3 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT3 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT5 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}
-					}else if ( !so.checkFlag( StaticObject::Levers::FLAG_LEVER5 ) ){   //레버5 on
-						//라이트 2, 5 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT2 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT5 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}
-					}else if ( so.checkFlag( StaticObject::Levers::FLAG_LEVER5 ) ){   //레버5 off
-						//라이트 2, 5 플래그 변화
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT2 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT2 );
-						}
-						if( so.checkFlag( StaticObject::Lights::FLAG_LIGHT5 ) ){
-							so.resetFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}else{
-							so.setFlag( StaticObject::Lights::FLAG_LIGHT5 );
-						}
+			}
+			else
+			{      //구멍이 아닐 때
+				if ( o.hasLeverButtonPressed() )
+				{ 
+					//레버를 당겼을때
+
+					bool IsLever = so.checkFlag( StaticObject::Levers::FLAG_LEVER1 );
+					//레버1 : 1, 3 전구 on, off
+					if( IsLever )
+					{
+						//레버1 off
+ 						SetOff_OnFlag( light1, StaticObject::Lights::FLAG_LIGHT1 );
+ 						SetOff_OnFlag( light3, StaticObject::Lights::FLAG_LIGHT3 );
 					}
-				}else{      //레버가 아니면
+					else if( !IsLever )
+					{
+						//레버1 on
+						SetOn_OffFlag( light1, StaticObject::Lights::FLAG_LIGHT1 );
+						SetOn_OffFlag( light3, StaticObject::Lights::FLAG_LIGHT3 );
+					}
+
+					IsLever = so.checkFlag( StaticObject::Levers::FLAG_LEVER2 );
+					//레버2 : 2, 3, 5 전구 on, off
+					if( IsLever )
+					{
+						//레버2 off
+						SetOff_OnFlag( light2, StaticObject::Lights::FLAG_LIGHT2 );
+						SetOff_OnFlag( light3, StaticObject::Lights::FLAG_LIGHT3 );
+						SetOff_OnFlag( light5, StaticObject::Lights::FLAG_LIGHT5 );
+					}
+					else if( !IsLever )
+					{
+						//레버2 on
+						SetOn_OffFlag( light2, StaticObject::Lights::FLAG_LIGHT2 );
+						SetOn_OffFlag( light3, StaticObject::Lights::FLAG_LIGHT3 );
+						SetOn_OffFlag( light5, StaticObject::Lights::FLAG_LIGHT5 );
+					}
+
+					IsLever = so.checkFlag( StaticObject::Levers::FLAG_LEVER3 );
+					//레버3 : 2, 4 전구 on, off
+					if( IsLever )
+					{
+						//레버3 off
+						SetOff_OnFlag( light2, StaticObject::Lights::FLAG_LIGHT2 );
+						SetOff_OnFlag( light4, StaticObject::Lights::FLAG_LIGHT4 );
+					}
+					else if( !IsLever )
+					{
+						//레버3 on
+						SetOn_OffFlag( light2, StaticObject::Lights::FLAG_LIGHT2 );
+						SetOn_OffFlag( light4, StaticObject::Lights::FLAG_LIGHT4 );
+					}
+
+					IsLever = so.checkFlag( StaticObject::Levers::FLAG_LEVER4 );
+					//레버4 : 3, 5 전구 on, off
+					if( IsLever )
+					{
+						//레버4 off
+						SetOff_OnFlag( light3, StaticObject::Lights::FLAG_LIGHT3 );
+						SetOff_OnFlag( light5, StaticObject::Lights::FLAG_LIGHT5 );
+					}
+					else if( !IsLever )
+					{
+						//레버4 on
+						SetOn_OffFlag( light3, StaticObject::Lights::FLAG_LIGHT3 );
+						SetOn_OffFlag( light5, StaticObject::Lights::FLAG_LIGHT5 );
+					}
+
+					IsLever = so.checkFlag( StaticObject::Levers::FLAG_LEVER5 );
+					//레버5 : 2, 5 전구 on, off
+					if( IsLever )
+					{
+						//레버5 off
+						SetOff_OnFlag( light2, StaticObject::Lights::FLAG_LIGHT2 );
+						SetOff_OnFlag( light5, StaticObject::Lights::FLAG_LIGHT5 );
+					}
+					else if( !IsLever )
+					{
+						//레버5 on
+						SetOn_OffFlag( light2, StaticObject::Lights::FLAG_LIGHT2 );
+						SetOn_OffFlag( light5, StaticObject::Lights::FLAG_LIGHT5 );
+					}
+
+				}
+				else
+				{      //레버가 아니면
 					//주변 9칸에서 방해물을 찾아서 배열에 넣는다
-					for ( int i = 0; i < 3; ++i ){
-						for ( int j = 0; j < 3; ++j ){
+					for ( int i = 0; i < 3; ++i )
+					{
+						for ( int j = 0; j < 3; ++j )
+						{
 							int tx = x + i - 1;
 							int ty = y + j - 1;
 							const StaticObject& so = mStaticObjects( tx, ty );
-							if ( so.checkFlag( StaticObject::Normal::FLAG_WALL_W | StaticObject::Normal::FLAG_WALL_H ) ){
+							if ( so.checkFlag( StaticObject::Normal::FLAG_WALL_W | StaticObject::Normal::FLAG_WALL_H ) )
+							{
 								WallX[ WallNum ] = x + i - 1;
 								WallY[ WallNum ] = y + j - 1;
 								++WallNum;
@@ -313,17 +334,22 @@ void State::update(){
 					}
 				}
 			}
-		}else if( o.isEnemy() ){      //적일때
+		}
+		else if( o.isEnemy() )
+		{      //적일때
 			//주변 9칸에서 방해물을 찾아서 배열에 넣는다
-			for ( int i = 0; i < 3; ++i ){
-				for ( int j = 0; j < 3; ++j ){
+			for ( int i = 0; i < 3; ++i )
+			{
+				for ( int j = 0; j < 3; ++j )
+				{
 					int tx = x + i - 1;
 					int ty = y + j - 1;
 					const StaticObject& so = mStaticObjects( tx, ty );
 					//적은 구멍에 빠지지 않기 때문에 구멍도 벽처럼 충돌처리
 					if ( so.checkFlag( StaticObject::Normal::FLAG_WALL_W 
 						| StaticObject::Normal::FLAG_WALL_H 
-						| StaticObject::Normal::FLAG_HOLE ) ){
+						| StaticObject::Normal::FLAG_HOLE ) )
+					{
 						WallX[ WallNum ] = x + i - 1;
 						WallY[ WallNum ] = y + j - 1;
 						++WallNum;
@@ -337,8 +363,10 @@ void State::update(){
 	}
 
 	//플레이어와 적의 충돌체크
-	for ( int i = 0; i < mDynamicObjectNumber; ++i ){
-		for ( int j = i + 1; j < mDynamicObjectNumber; ++j ){
+	for ( int i = 0; i < mDynamicObjectNumber; ++i )
+	{
+		for ( int j = i + 1; j < mDynamicObjectNumber; ++j )
+		{
 			mDynamicObjects[ i ].doCollisionReactionToDynamic( &mDynamicObjects[ j ] );
 		}
 	}
